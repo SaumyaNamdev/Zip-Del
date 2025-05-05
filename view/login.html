@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login - Zip Delivery</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    
+  <!-- Wrap login page in a flexbox wrapper -->
+   <!-- Logo -->
+  <div class="login-wrapper">
+    <div class="login-container">
+      <div class="login-card">
+        <div class="logo-area">
+            <a href="/" class="logo-link" title="Go to Home">
+                <img src="../Public/assets/images/logo.png" alt="Smart City Logo" class="logo">
+              </a>
+          <h2>Login</h2>
+        </div>
+
+        <form id="loginForm">
+          <input type="text" id="emailOrPhone" placeholder="Email or Phone Number" required>
+          <span id="emailOrPhoneError" class="error-message"></span>
+        
+          <input type="password" id="password" placeholder="Password" required>
+          <span id="passwordError" class="error-message"></span>
+        
+          <button type="submit" id="loginBtn" disabled>Login</button>
+        </form>
+
+        <p class="links">
+            <a href="forgot.html">Forgot Password?</a> |
+            <a href="register.html">Register</a>
+          </p>
+      </div>
+    </div>
+  </div>
+  
+
+  <script src="js/login.js"></script>
+</body>
+</html>

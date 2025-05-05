@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Forgot Password - Zip Delivery</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Wrap login page in a flexbox wrapper -->
+   
+  <div class="login-wrapper">
+    <div class="login-container">
+      <div class="login-card">
+        <div class="logo-area">
+            <a href="/" class="logo-link" title="Go to Home">
+                <img src="assets/images/logo.png" alt="Smart City Logo" class="logo">
+              </a>
+            <h2>Reset Password</h2>
+        </div>
+        <form id="loginForm">
+            <label for="emailOrPhone">Enter your registered Email or Phone:</label><br>
+          <input type="text" id="emailOrPhone" placeholder="Email or Phone Number" required>
+          <span id="emailOrPhoneError" class="error-message"></span>
+          <button type="submit" id="loginBtn" disabled>Send Reset Link</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div id="navbar"></div> <!-- Nav will be injected here -->
+  
+  <!-- your page content below -->
+  
+  <script src="js/nav.js"></script>
+  
+
+  <script src="js/login.js"></script>
+</body>
+</html>
