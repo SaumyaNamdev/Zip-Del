@@ -4,33 +4,108 @@
   <meta charset="UTF-8">
   <title>Shop - Zip Delivery</title>
   <link rel="stylesheet" href="css/style.css">
+  <script defer src="js/shop.js"></script>
 </head>
 <body>
   <header>
     <h1>🥦 Zip Delivery</h1>
-    
     <nav id="navbar">
       <a href="/">Home</a>
       <a href="shop.html">Shop</a>
-      <a href="contact.html">Contact</a>
-      <a href="login.html">Login</a>
-      <a href="register.html">Register</a>
+      <a href="cart.html" class="cart-icon">
+        🛒 Cart <span id="cart-count">0</span>
+      </a>
+      
     </nav>
+    
+    <div class="search-bar-container">
+      <input type="text" id="searchInput" placeholder="🔍Search for fruits, vegetables..." onkeyup="searchItems()">
+      <span class="search-icon"></span>
+    </div>
+    
+    
+    
+    
   </header>
 
   <main>
-    <section class="hero">
-      <h2>Shop Fresh Produce</h2>
-      <p>Browse and buy fresh fruits and vegetables delivered to your doorstep.</p>
-      <!-- Example product list -->
-      <div class="product-list">
-        <div class="product-item">🍎 Apples - ₹120/kg</div>
-        <div class="product-item">🥕 Carrots - ₹80/kg</div>
-        <div class="product-item">🥬 Spinach - ₹50/bunch</div>
+    
+    <section class="shop-section">
+      <h2 class="shop-title">All Products</h2>
+      <div class="product-scroll-container" id="product-list">
+        <!-- JavaScript will generate product cards here -->
       </div>
     </section>
+    
+    <section class="product-section">
+      <div class="product-list">
+        <div class="product-item">
+          
+          <p>Apple - ₹100/kg</p>
+          <button>Add to Cart</button>
+        </div>
+        <div class="product-item">
+          
+          <p>Banana - ₹40/kg</p>
+          <button>Add to Cart</button>
+        </div>
+        <div class="product-item">
+         
+          <p>Tomato - ₹60/kg</p>
+          <button>Add to Cart</button>
+        </div>
+        <!-- Add more fruits/vegetables as needed -->
+      </div>
+      <!-- Fruits -->
+       <h1>FRUITS HUB</h1>
+      <div class="product-item">🍎 Apples - ₹120/kg</div>
+      <div class="product-item">🍌 Bananas - ₹50/dozen</div>
+      <div class="product-item">🍇 Grapes - ₹100/kg</div>
+      <div class="product-item">🍊 Oranges - ₹80/kg</div>
+      <div class="product-item">🍓 Strawberries - ₹150/box</div>
+      <div class="product-item">🥭 Mangoes - ₹130/kg</div>
+      <div class="product-item">🍍 Pineapple - ₹90 each</div>
+      <div class="product-item">🍉 Watermelon - ₹60 each</div>
+
+      <!-- Vegetables -->
+       <H1>VEGETABLE HUB</H1>
+      <div class="product-item">🥕 Carrots - ₹80/kg</div>
+      <div class="product-item">🥔 Potatoes - ₹30/kg</div>
+      <div class="product-item">🧅 Onions - ₹40/kg</div>
+      <div class="product-item">🍅 Tomatoes - ₹35/kg</div>
+      <div class="product-item">🥦 Broccoli - ₹100/kg</div>
+      <div class="product-item">🥬 Spinach - ₹50/bunch</div>
+      <div class="product-item">🌽 Corn - ₹25/pc</div>
+      <div class="product-item">🫑 Bell Peppers - ₹70/kg</div>
+    </section>
+    <section class="shop-section">
+      <h2 class="shop-title">All Products</h2>
+      <div class="product-scroll-container" id="product-list">
+        <!-- JavaScript will generate product cards here -->
+      </div>
+    </section>
+    
   </main>
 
-  <script src="js/main.js"></script>
+  <footer>
+    <p>&copy; 2025 Zip Delivery. All rights reserved.</p>
+  </footer>
+
+  <script src="js/shop.js"></script>
+  <script src="js/cartCount.js"></script>
+  <script src="js/cart.js"></script>
+  <script>
+    function searchItems() {
+      const input = document.getElementById('searchInput').value.toLowerCase();
+      const items = document.querySelectorAll('.product-item');
+    
+      items.forEach(item => {
+        const name = item.querySelector('h4').innerText.toLowerCase();
+        item.style.display = name.includes(input) ? 'block' : 'none';
+      });
+    }
+    </script>
+    
+
 </body>
 </html>

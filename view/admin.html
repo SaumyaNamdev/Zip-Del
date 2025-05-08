@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Dashboard | Zip Delivery</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="admin-container">
+    <aside class="sidebar">
+      <h2>Zip Delivery</h2>
+      <ul>
+        <li>Dashboard</li>
+        <li>Orders</li>
+        <li>Products</li>
+        <li>Users</li>
+        <li>Logout</li>
+      </ul>
+    </aside>
+    <main class="dashboard">
+      <header class="dashboard-header">
+        <h1>Admin Dashboard</h1>
+        <span id="adminUser">Welcome, Admin</span>
+        
+      </header>
+      <section class="stats">
+        <div class="card">Total Orders<br><span id="orderCount">0</span></div>
+        <div class="card">Total Revenue<br><span id="revenue">₹0</span></div>
+        <div class="card">Total Users<br><span id="userCount">0</span></div>
+        <div class="card">Inventory<br><span id="productCount">0</span></div>
+      </section>
+      <section class="charts">
+        <canvas id="salesChart"></canvas>
+      </section>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>

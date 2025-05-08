@@ -18,25 +18,25 @@
         </div>
 
         <form id="loginForm">
-          <input type="text" id="emailOrPhone" placeholder="Email" required>
-          <span id="emailOrPhoneError" class="error-message"></span>
-          <input type="text" id="emailOrPhone" placeholder="Phone Number" required>
-          <span id="emailOrPhoneError" class="error-message"></span>
-
+          <input type="text" id="email" placeholder="Email" required>
+          
+          <input type="text" id="Phone" placeholder="Phone Number" required>
+          <span id="PhoneError" class="error-message"></span>
+          <input type="text" id="name" placeholder="Name" required>
+          <span id="nameError" class="error-message"></span>
           <input type="password" id="password" placeholder="Password" required>
           <span id="passwordError" class="error-message"></span>
           <label for="role">Role</label><br>
           <select id="role" name="role" required>
-            <option value="vendor">Vendor</option>
-            <option value="customer">Customer</option>
+            <option value="Vendor">Vendor</option>
+            <option value="Customer">Customer</option>
+            <option value="Admin">Admin</option>
+
           </select>
-
-
-
           <br>
           <br>
         
-          <button type="submit" id="loginBtn" disabled>Register</button>
+          <button type="submit" id="loginBtn" >Register</button>
         </form>
 
         <p class="login-links">

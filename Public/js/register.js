@@ -8,8 +8,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const emailError = document.getElementById("emailError");
     const passwordError = document.getElementById("passwordError");
   
-    const registerBtn = document.getElementById("registerBtn");
-    const form = document.getElementById("registerForm");
+    const registerBtn = document.getElementById("loginBtn");
+    const form = document.getElementById("loginForm");
   
     // Validate form inputs
     function validateInputs() {
@@ -49,16 +49,13 @@ document.addEventListener("DOMContentLoaded", function () {
       //registerBtn.disabled = !(validName && validEmail && validPassword && role);
     }
   
-    nameField.addEventListener("input", validateInputs);
-    emailField.addEventListener("input", validateInputs);
-    passwordField.addEventListener("input", validateInputs);
-    roleField.addEventListener("change", validateInputs);
+    
   
     // Submit handler
     form.addEventListener("submit", function (e) {
         e.preventDefault();
       
-        fetch("http://localhost:5000/api/auth/register", {
+        fetch("http://localhost:3000/api/auth/register", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
@@ -66,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
             email: emailField.value,
             password: passwordField.value,
             role: roleField.value
-          })
+          })        
         })
         .then(res => res.json())
         .then(data => {

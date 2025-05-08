@@ -8,16 +8,18 @@ const userRoutes=require("./routes/userRoutes");
 // Middleware to parse JSON and URL-encoded data
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-mongoose.connect('mongodb://127.0.0.1:27017/ZipDel')
-.then(()=>console.log("Database Connected"))
-.catch((err)=>console.log("Mongo Error",err));
+mongoose.connect("mongodb://localhost:27017/ZipDel", {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+}).then(() => console.log("MongoDB connected"))
+  .catch(err => console.error("MongoDB error:", err));
 
 // Serve all static files from /public
 app.use(express.static(path.join(__dirname, "public")));
 app.use(bodyParser.urlencoded({ extended: false }));
 
 // Default route to home
-app.get("api/auth",userRoutes);
+app.use("/api/auth",userRoutes);
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "view/index.html"));
 });
@@ -36,6 +38,10 @@ app.get("/login.html", (req, res) => {
 app.get("/register.html", (req, res) => {
   res.sendFile(path.join(__dirname, "view/register.html"));
 });
+app.get("/cart.html", (req, res) => {
+  res.sendFile(path.join(__dirname, "view/cart.html"));
+});
+
 
 // 404 Handler
 app.use((req, res) => {
