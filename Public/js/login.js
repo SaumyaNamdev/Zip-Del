@@ -60,7 +60,9 @@ document.addEventListener("DOMContentLoaded", function () {
           localStorage.setItem("isLoggedIn", "true");
 
           if (data.user.role === "Admin") {
-            window.location.href = "dashboard-admin.html";
+            window.location.href = "admin-dashboard.html";
+          } else if (data.user.role === "Vendor") {
+            window.location.href = "/vendor/dashboard";
           } else {
             window.location.href = "/";
           }

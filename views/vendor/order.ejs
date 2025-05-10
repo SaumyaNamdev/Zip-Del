@@ -1,0 +1,29 @@
+<%- include('../partials/header') %>
+
+<div class="container mt-5">
+  <h1 class="mb-4">Vendor Orders</h1>
+  <p>Here you can views and manage all your customer orders.</p>
+
+  <!-- Example Table -->
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Order ID</th>
+        <th>Items</th>
+        <th>Total</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Orders will be looped here -->
+      <tr>
+        <td>#001</td>
+        <td>Apples, Tomatoes</td>
+        <td>₹350</td>
+        <td>Pending</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<%- include('../partials/footer') %>

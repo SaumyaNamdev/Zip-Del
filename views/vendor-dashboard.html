@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewsport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Dashboard | Zip Delivery</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- Admin Header -->
+  <header class="admin-header">
+    <h2>🥦 Admin Dashboard-Zip Delivery</h2>
+    <button onclick="logout()">Logout</button>
+  </header>
+
+  <!-- Sidebar -->
+  <div class="admin-container">
+    <aside class="admin-sidebar active">
+      <ul>
+        <li><a href="#overviews">Overviews</a></li>
+        <li><a href="#products">Manage Products</a></li>
+        <li><a href="#orders">Orders</a></li>
+        <li><a href="#add-products">Add Produts</a></li>
+        <li><a href="#profile-setting">Profile Setting</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main Admin Content -->
+    <main class="admin-main">
+      
+      <!-- Overviews Section -->
+      <section id="overviews" class="admin-section">
+        <h3>📊 Overviews</h3>
+        <p>Total Product: <strong>0</strong></p>
+        <p>Pending Orders: <strong>0</strong></p>
+        <p>Deliver Orders: <strong>0</strong></p>
+        <p>Earning Summary: <strong>0</strong></p>
+      </section>
+
+      <!-- Manage Products Section -->
+      <section id="products" class="admin-section">
+        <h3>🍎 Manage Products</h3>
+        <input type="text" placeholder="Add new product name" id="productName" />
+        <button onclick="addProduct()">Add Product</button>
+        <ul id="productList">
+          <li>Tomatoes 🍅</li>
+          <li>Bananas 🍌</li>
+          <!-- More products will be injected here -->
+        </ul>
+      </section>
+
+      <!-- Orders Section -->
+      <section id="orders" class="admin-section">
+        <h3>🛒 Recent Orders</h3>
+        <table id="orderTable">
+          <tr>
+            <th>Order ID</th>
+            <th>Customer</th>
+            <th>Status</th>
+          </tr>
+          <tr>
+            <td>#1021</td>
+            <td>Priya Sharma</td>
+            <td>Processing</td>
+          </tr>
+        </table>
+      </section>
+
+      <!-- Alerts Section -->
+      <section id="alerts" class="admin-section">
+        <h3>🚨 Sensor Alerts</h3>
+        <table id="alertTable">
+          <tr>
+            <th>ID</th>
+            <th>Location</th>
+            <th>Issue</th>
+            <th>Time</th>
+          </tr>
+          <tr>
+            <td>AL123</td>
+            <td>Main Street</td>
+            <td>Temperature Spike</td>
+            <td>11:45 AM</td>
+          </tr>
+        </table>
+      </section>
+
+      <!-- Logs Section -->
+      <section id="logs" class="admin-section">
+        <h3>📝 Activity Logs</h3>
+        <ul id="logList">
+          <li>[10:00 AM] Admin logged in</li>
+          <li>[10:15 AM] Added new product</li>
+        </ul>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    function logout() {
+      localStorage.removeItem("user");
+      window.location.href = "login.html";
+    }
+
+    function addProduct() {
+      const name = document.getElementById("productName").value;
+      if (name) {
+        const li = document.createElement("li");
+        li.textContent = name;
+        document.getElementById("productList").appendChild(li);
+        document.getElementById("productName").value = "";
+      }
+    }
+  </script>
+</body>
+</html>
